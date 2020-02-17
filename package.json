@@ -13,13 +13,17 @@
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
+    "@styled-system/css": "^5.1.4",
     "expo": "~36.0.0",
+    "lodash": "^4.17.15",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
     "react-native-screens": "2.0.0-alpha.12",
     "react-native-web": "~0.11.7",
-    "react-test-renderer": "~16.9.0"
+    "react-test-renderer": "~16.9.0",
+    "styled-components": "^5.0.1",
+    "styled-system": "^5.1.4"
   },
   "devDependencies": {
     "@anansi/eslint-plugin": "^0.8.4-beta.2",
@@ -38,6 +42,9 @@
     "@types/react-native": "^0.61.15",
     "@types/react-test-renderer": "^16.9.2",
     "@types/storybook__react": "^5.2.1",
+    "@types/styled-components": "^4.4.3",
+    "@types/styled-system": "^5.1.6",
+    "@types/styled-system__css": "^5.0.4",
     "babel-loader": "^8.0.6",
     "babel-preset-expo": "~8.0.0",
     "eslint": "^6.8.0",
