@@ -1,1 +1,1 @@
-export { default as useAssetsLoader } from './useAssetsLoader';
+export { default as useAssetsLoader } from "./useAssetsLoader";

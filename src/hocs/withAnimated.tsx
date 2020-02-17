@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Animated } from "react-native";
 
 function withAnimated<T>(WrappedComponent: React.ComponentType<T>): any {

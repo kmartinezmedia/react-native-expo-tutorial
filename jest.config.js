@@ -10,6 +10,16 @@ module.exports = {
   testPathIgnorePatterns: ["\\.snap$", "<rootDir>/node_modules/"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   transform: {
-    "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
+    "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx",
+    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+    "^.+\\.ts|tsx$": "ts-jest"
+  },
+  moduleDirectories: ["src", "node_modules"],
+  globals: {
+    "ts-jest": {
+      tsConfig: {
+        jsx: "react"
+      }
+    }
   }
 };

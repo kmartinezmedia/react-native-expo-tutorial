@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
-import { SplashScreen } from 'expo';
-import { Asset } from 'expo-asset';
-import * as Font from 'expo-font';
-import { Image } from 'react-native';
+import { useState, useEffect, useCallback } from "react";
+import { SplashScreen } from "expo";
+import { Asset } from "expo-asset";
+import * as Font from "expo-font";
+import { Image } from "react-native";
 
 interface Props {
   images?: Array<string | number>;
@@ -32,8 +32,10 @@ const useAssetsLoader = (config: Props): AssetLoaderState => {
     if (images) {
       requests.push(
         images.map(image =>
-          typeof image === 'string' ? Image.prefetch(image) : Asset.fromModule(image).downloadAsync(),
-        ),
+          typeof image === "string"
+            ? Image.prefetch(image)
+            : Asset.fromModule(image).downloadAsync()
+        )
       );
     }
 
@@ -50,7 +52,7 @@ const useAssetsLoader = (config: Props): AssetLoaderState => {
     onFinish: () => setIsLoadingAssets(false),
     onError: (error: Error) => {
       throw new Error(`Error loading resources: ${error.message}`);
-    },
+    }
   };
 };
 

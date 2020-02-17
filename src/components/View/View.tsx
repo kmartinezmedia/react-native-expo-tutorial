@@ -1,5 +1,6 @@
 import { View as RNView } from "react-native";
 import styled from "styled-components/native";
+
 import { withAnimated } from "hocs";
 import { viewConfig, ViewProps } from "styles/config";
 

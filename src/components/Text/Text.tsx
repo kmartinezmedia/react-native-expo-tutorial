@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Text as RNText } from "react-native";
+
 import { withAnimated } from "hocs";
 import { textConfig, TextProps } from "styles/config";
 
