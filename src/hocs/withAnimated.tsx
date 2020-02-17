@@ -5,6 +5,10 @@ function withAnimated<T>(WrappedComponent: React.ComponentType<T>): any {
   return Animated.createAnimatedComponent(withClass<T>(WrappedComponent));
 }
 
+/* 
+  React-native-web throws error if Animated.createAnimatedComponent
+  is called on a Functional component. So with wrap with HOC as workaround
+*/
 function withClass<T>(
   WrappedComponent: React.ComponentType<T>
 ): React.ComponentClass<T> {
