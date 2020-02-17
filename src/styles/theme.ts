@@ -41,7 +41,8 @@ const colors = {
   ],
   white: "#ffffff",
   success: "#38C2B7",
-  error: "#E14161"
+  error: "#E14161",
+  placeholder: "#C7C7D4"
 };
 
 export default {

@@ -3,6 +3,9 @@ import { DefaultTheme } from "styled-components/native";
 import {
   SpaceProps as SSpaceProps,
   BorderProps as SBorderProps,
+  FlexboxProps as SFlexboxProps,
+  PositionProps as SPositionProps,
+  LayoutProps as SLayoutProps,
   ThemeValue as SThemeValue,
   ConfigStyle
 } from "styled-system";
@@ -12,10 +15,14 @@ export type VariantConfig<T extends string, K> = Record<
   Record<T, K>
 >;
 export type AliasConfig<T> = Record<keyof T, ConfigStyle | boolean>;
-export type BorderProps = SBorderProps<DefaultTheme>;
 export type ModifierConfig<T extends string, K> = Record<T, StyleProp<K>>;
 export type ModifierProps<T extends string> = Partial<Record<T, boolean>>;
+
+export type BorderProps = SBorderProps<DefaultTheme>;
 export type SpaceProps = SSpaceProps<DefaultTheme>;
+export type FlexboxProps = SFlexboxProps<DefaultTheme>;
+export type PositionProps = SPositionProps<DefaultTheme>;
+export type LayoutProps = SLayoutProps<DefaultTheme>;
 
 export type ThemeValue<T extends keyof DefaultTheme> = SThemeValue<
   T,
@@ -63,4 +70,5 @@ export type ThemeColor =
   | "extraLightGreys.4"
   | "white"
   | "success"
-  | "error";
+  | "error"
+  | "placeholder";

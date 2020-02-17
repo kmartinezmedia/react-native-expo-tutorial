@@ -1,5 +1,13 @@
 import { ViewProps as RNViewProps, ViewStyle } from "react-native";
-import { compose, system, space, border } from "styled-system";
+import {
+  compose,
+  system,
+  space,
+  border,
+  position,
+  flexbox,
+  layout
+} from "styled-system";
 import { css } from "@styled-system/css";
 
 import {
@@ -8,23 +16,18 @@ import {
   BorderProps,
   ModifierProps,
   SpaceProps,
+  PositionProps,
+  FlexboxProps,
+  LayoutProps,
   ThemeColor
 } from "../types";
 import getModifiers from "./getModifiers";
 
 interface AliasProps {
   bg?: ThemeColor;
-  size?: number | string;
   align?: ViewStyle["alignItems"];
   justify?: ViewStyle["justifyContent"];
   wrap?: ViewStyle["flexWrap"];
-  flex?: ViewStyle["flex"];
-  width?: ViewStyle["width"];
-  height?: ViewStyle["height"];
-  top?: ViewStyle["top"];
-  left?: ViewStyle["left"];
-  bottom?: ViewStyle["bottom"];
-  right?: ViewStyle["right"];
   opacity?: ViewStyle["opacity"];
 }
 
@@ -34,9 +37,13 @@ type ModifierKeys =
   | "isCentered"
   | "isColumn"
   | "isRow";
+
 export type ViewProps = RNViewProps &
   BorderProps &
   SpaceProps &
+  FlexboxProps &
+  PositionProps &
+  LayoutProps &
   AliasProps &
   ModifierProps<ModifierKeys>;
 
@@ -81,9 +88,6 @@ const aliasConfig: AliasConfig<AliasProps> = {
     property: "backgroundColor",
     scale: "colors"
   },
-  size: {
-    properties: ["width", "height"]
-  },
   align: {
     property: "alignItems"
   },
@@ -93,13 +97,6 @@ const aliasConfig: AliasConfig<AliasProps> = {
   wrap: {
     property: "flexWrap"
   },
-  flex: true,
-  width: true,
-  height: true,
-  top: true,
-  left: true,
-  bottom: true,
-  right: true,
   opacity: true
 };
 
@@ -109,7 +106,7 @@ export default [
     flexShrink: 1,
     flexBasis: "auto"
   }) as Record<string, any>,
-  compose(space, border),
+  compose(space, border, position, flexbox, layout),
   system(aliasConfig),
   getModifiers(modifierConfig)
 ];

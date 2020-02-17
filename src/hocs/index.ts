@@ -1,1 +1,1 @@
-export { default as withAnimated } from "./withAnimated";
+export { default as withAnimated, withClass } from "./withAnimated";

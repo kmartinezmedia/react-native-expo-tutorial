@@ -5,6 +5,7 @@ module.exports = function (api) {
   return {
     presets: ["babel-preset-expo"],
     plugins: [
+      "@babel/plugin-proposal-nullish-coalescing-operator",
       [
         "module-resolver",
         {

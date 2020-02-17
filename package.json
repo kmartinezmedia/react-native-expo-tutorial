@@ -13,12 +13,19 @@
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
+    "@react-native-community/masked-view": "0.1.5",
+    "@react-navigation/bottom-tabs": "^5.0.5",
+    "@react-navigation/native": "^5.0.5",
     "@styled-system/css": "^5.1.4",
+    "crypto-js": "^3.1.9-1",
     "expo": "~36.0.0",
     "lodash": "^4.17.15",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-gesture-handler": "~1.5.0",
+    "react-native-reanimated": "~1.4.0",
+    "react-native-safe-area-context": "0.6.0",
     "react-native-screens": "2.0.0-alpha.12",
     "react-native-web": "~0.11.7",
     "react-test-renderer": "~16.9.0",
@@ -28,6 +35,7 @@
   "devDependencies": {
     "@anansi/eslint-plugin": "^0.8.4-beta.2",
     "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
     "@expo/webpack-config": "^0.11.1",
     "@storybook/addon-actions": "^6.0.0-alpha.13",
     "@storybook/addon-docs": "^6.0.0-alpha.13",
@@ -35,6 +43,7 @@
     "@storybook/addons": "^6.0.0-alpha.13",
     "@storybook/preset-typescript": "^1.2.0",
     "@storybook/react": "^6.0.0-alpha.13",
+    "@types/crypto-js": "^3.1.43",
     "@types/expo": "^33.0.1",
     "@types/jest": "^25.1.2",
     "@types/node": "^13.7.1",
@@ -46,7 +55,6 @@
     "@types/styled-system": "^5.1.6",
     "@types/styled-system__css": "^5.0.4",
     "babel-loader": "^8.0.6",
-    "babel-preset-expo": "~8.0.0",
     "eslint": "^6.8.0",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.20.1",
@@ -58,7 +66,11 @@
     "react-is": "^16.12.0",
     "ts-jest": "^25.2.0",
     "ts-loader": "^6.2.1",
-    "typescript": "~3.6.3"
+    "typescript": "3.7.5"
   },
-  "private": true
+  "private": true,
+  "resolutions": {
+    "**/react": "~16.9.0",
+    "**/react-dom": "~16.9.0"
+  }
 }

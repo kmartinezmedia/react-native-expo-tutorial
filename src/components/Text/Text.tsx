@@ -5,6 +5,6 @@ import { withAnimated } from "hocs";
 import { textConfig, TextProps } from "styles/config";
 
 const Text = styled(RNText)<TextProps>(() => textConfig);
-const AnimatedText = withAnimated<TextProps>(Text);
+const AnimatedText = withAnimated<typeof RNText, TextProps>(RNText, textConfig);
 
 export { Text, AnimatedText };

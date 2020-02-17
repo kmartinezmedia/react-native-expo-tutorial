@@ -5,6 +5,6 @@ import { withAnimated } from "hocs";
 import { viewConfig, ViewProps } from "styles/config";
 
 const View = styled(RNView)<ViewProps>(() => viewConfig);
-const AnimatedView = withAnimated<ViewProps>(View);
+const AnimatedView: typeof View = withAnimated<ViewProps>(RNView, viewConfig);
 
 export { View, AnimatedView };

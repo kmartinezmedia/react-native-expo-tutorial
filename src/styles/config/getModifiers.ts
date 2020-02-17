@@ -31,19 +31,19 @@ export default function getModifierStyles(modifiers: any) {
   };
 }
 
-const memorizedResults = new Map();
+const memoizedResults = new Map();
 function memo(fn: Function, deps: any[]) {
   // there are two unique factors to the computation, first the function itself then the dependencies
 
   // First memorize results based on FN
-  const memorizedResultsBasedOnFn =
-    memorizedResults.get(fn) ||
-    (memorizedResults.set(fn, new Map()) && memorizedResults.get(fn));
+  const memoizedResultsBasedOnFn =
+    memoizedResults.get(fn) ||
+    (memoizedResults.set(fn, new Map()) && memoizedResults.get(fn));
 
   // Then get/set results based on dependencies to each individual function
   return (
-    memorizedResultsBasedOnFn.get(deps) ||
-    (memorizedResultsBasedOnFn.set(deps, fn()) &&
-      memorizedResultsBasedOnFn.get(deps))
+    memoizedResultsBasedOnFn.get(deps) ||
+    (memoizedResultsBasedOnFn.set(deps, fn()) &&
+      memoizedResultsBasedOnFn.get(deps))
   );
 }
