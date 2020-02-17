@@ -6,7 +6,7 @@
     "baseUrl": "./src", /* Base directory to resolve non-absolute module names. */
     "rootDirs": [
       "src",
-      "stories"
+      "storybook"
     ],
     "paths": {
       "*": [

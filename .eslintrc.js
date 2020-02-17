@@ -1,6 +1,7 @@
 module.exports = {
   extends: 'plugin:@anansi/typescript',
   parserOptions: {
-    project: ['tsconfig.json'],
+    tsconfigRootDir: __dirname,
+    project: './tsconfig.json'
   }
 }
