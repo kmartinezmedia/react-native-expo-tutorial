@@ -13,6 +13,7 @@ module.exports = {
     config.resolve.alias = {
       "react-native": "react-native-web"
     };
+
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       exclude: path.resolve(__dirname, "../node_modules/"),
@@ -32,6 +33,7 @@ module.exports = {
         }
       ]
     });
+
     config.resolve.extensions.push(
       ".ts",
       ".tsx",
@@ -39,6 +41,7 @@ module.exports = {
       ".web.ts",
       ".json"
     );
+
     return config;
   },
   stories: [

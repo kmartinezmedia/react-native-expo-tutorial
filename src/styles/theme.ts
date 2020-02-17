@@ -1,3 +1,49 @@
+const colors = {
+  primary: "#F4BA00",
+  primary2: "#F49B00",
+  primaryLight: "#FDEDCC",
+  secondary: "#78B1C4",
+  dark: "#4C4B5E",
+  textDark: "#4D4D4D",
+  textMedium: "#9F9FAF",
+  textLight: "#F2F2F9",
+  textLightest: "rgba(242, 242, 249, 0.7)",
+  darkGreys: [
+    "rgba(76, 75, 94, 0.9)",
+    "rgba(76, 75, 94, 0.8)",
+    "rgba(76, 75, 94, 0.4)",
+    "rgba(76, 75, 94, 0.2)",
+    "rgba(76, 75, 94, 0.05)"
+  ],
+  mediumGrey: "#D1D4D7",
+  mediumGreys: [
+    "rgba(209, 215, 215, 0.9)",
+    "rgba(209, 215, 215, 0.8)",
+    "rgba(209, 215, 215, 0.4)",
+    "rgba(209, 215, 215, 0.2)",
+    "rgba(209, 215, 215, 0.05)"
+  ],
+  lightGrey: "#EAEBF1",
+  lightGreys: [
+    "rgba(234, 235, 241, 0.9)",
+    "rgba(234, 235, 241, 0.8)",
+    "rgba(234, 235, 241, 0.4)",
+    "rgba(234, 235, 241, 0.2)",
+    "rgba(234, 235, 241, 0.05)"
+  ],
+  extraLightGrey: "#F6F7FC",
+  extraLightGreys: [
+    "rgba(246, 247, 252, 0.9)",
+    "rgba(246, 247, 252, 0.8)",
+    "rgba(246, 247, 252, 0.4)",
+    "rgba(246, 247, 252, 0.2)",
+    "rgba(246, 247, 252, 0.05)"
+  ],
+  white: "#ffffff",
+  success: "#38C2B7",
+  error: "#E14161"
+};
+
 export default {
   space: [0, 4, 8, 16, 24, 32, 64, 96, 128, 160, 192],
   radii: {
@@ -52,50 +98,4 @@ export default {
     dark: ["#3A3F41", "#141416"],
     overlay: ["rgba(0,0,0,0)", "rgba(0,0,0,0.8)"]
   }
-};
-
-const colors = {
-  primary: "#F4BA00",
-  primary2: "#F49B00",
-  primaryLight: "#FDEDCC",
-  secondary: "#78B1C4",
-  dark: "#4C4B5E",
-  textDark: "#4D4D4D",
-  textMedium: "#9F9FAF",
-  textLight: "#F2F2F9",
-  textLightest: "rgba(242, 242, 249, 0.7)",
-  darkGreys: [
-    "rgba(76, 75, 94, 0.9)",
-    "rgba(76, 75, 94, 0.8)",
-    "rgba(76, 75, 94, 0.4)",
-    "rgba(76, 75, 94, 0.2)",
-    "rgba(76, 75, 94, 0.05)"
-  ],
-  mediumGrey: "#D1D4D7",
-  mediumGreys: [
-    "rgba(209, 215, 215, 0.9)",
-    "rgba(209, 215, 215, 0.8)",
-    "rgba(209, 215, 215, 0.4)",
-    "rgba(209, 215, 215, 0.2)",
-    "rgba(209, 215, 215, 0.05)"
-  ],
-  lightGrey: "#EAEBF1",
-  lightGreys: [
-    "rgba(234, 235, 241, 0.9)",
-    "rgba(234, 235, 241, 0.8)",
-    "rgba(234, 235, 241, 0.4)",
-    "rgba(234, 235, 241, 0.2)",
-    "rgba(234, 235, 241, 0.05)"
-  ],
-  extraLightGrey: "#F6F7FC",
-  extraLightGreys: [
-    "rgba(246, 247, 252, 0.9)",
-    "rgba(246, 247, 252, 0.8)",
-    "rgba(246, 247, 252, 0.4)",
-    "rgba(246, 247, 252, 0.2)",
-    "rgba(246, 247, 252, 0.05)"
-  ],
-  white: "#ffffff",
-  success: "#38C2B7",
-  error: "#E14161"
 };
