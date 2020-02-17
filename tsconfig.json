@@ -15,7 +15,7 @@
         "*"
       ]
     },
-    "target": "es5",
+    "target": "esnext",
     "jsx": "react-native",
     "lib": [
       "dom",
@@ -26,6 +26,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "isolatedModules": false,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
@@ -35,7 +36,6 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noFallthroughCasesInSwitch": true,
