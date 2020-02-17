@@ -23,7 +23,8 @@ interface AliasProps {
 }
 
 type VariantKeys = ThemeFontSize;
-export interface TextProps extends AliasProps, SpaceProps, RNTextProps {
+
+interface TextProps extends AliasProps, SpaceProps, RNTextProps {
   variant?: VariantKeys;
 }
 
@@ -101,4 +102,5 @@ const aliasConfig: AliasConfig<AliasProps> = {
   }
 };
 
+export { TextProps };
 export default [variant(variantsConfig), compose(space, system(aliasConfig))];
