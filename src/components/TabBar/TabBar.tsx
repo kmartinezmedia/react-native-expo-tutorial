@@ -41,7 +41,6 @@ const TabBar = (props: BottomTabBarProps) => {
       pt={3}
       pb={paddingBottom}
       style={{ transform: [{ translateY }] }}
-      useNativeDriver
     >
       {routes.map(({ key, name }, index) => {
         return (

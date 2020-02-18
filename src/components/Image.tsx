@@ -1,13 +1,14 @@
-import { Image as RNImage } from "react-native";
+import { Image as RNImage, Animated } from "react-native";
 import styled from "styled-components/native";
 
-import { withAnimated } from "hocs";
-import { imageConfig, ImageProps } from "styles/config";
+import imageConfig, {
+  ImageProps,
+  AnimatedImageProps
+} from "styles/config/imageConfig";
 
 const Image = styled(RNImage)<ImageProps>(() => imageConfig);
-const AnimatedImage = withAnimated<typeof RNImage, ImageProps>(
-  RNImage,
-  imageConfig
+const AnimatedImage = styled(Animated.Image)<AnimatedImageProps>(
+  () => imageConfig
 );
 
 export { Image, AnimatedImage };

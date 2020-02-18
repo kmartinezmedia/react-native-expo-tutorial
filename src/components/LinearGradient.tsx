@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components/native";
 import { LinearGradient as ReactLinearGradient } from "expo-linear-gradient";
 
-import { viewConfig, ViewProps } from "styles/config";
+import viewConfig, { ViewProps } from "styles/config/viewConfig";
 import { ThemeGradient } from "styles";
 import { withAnimated, withClass } from "hocs";
 

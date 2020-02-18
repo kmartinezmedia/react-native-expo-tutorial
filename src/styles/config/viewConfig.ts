@@ -13,6 +13,8 @@ import { css } from "@styled-system/css";
 import {
   AliasConfig,
   ModifierConfig,
+  ExtractCollisions,
+  RNAnimatedViewProps,
   BorderProps,
   ModifierProps,
   SpaceProps,
@@ -23,13 +25,13 @@ import {
 } from "../types";
 import getModifiers from "./getModifiers";
 
-interface AliasProps {
+type AliasProps = {
   bg?: ThemeColor;
   align?: ViewStyle["alignItems"];
   justify?: ViewStyle["justifyContent"];
   wrap?: ViewStyle["flexWrap"];
   opacity?: ViewStyle["opacity"];
-}
+};
 
 type ModifierKeys =
   | "hasFlexGrow"
@@ -38,8 +40,7 @@ type ModifierKeys =
   | "isColumn"
   | "isRow";
 
-export type ViewProps = RNViewProps &
-  BorderProps &
+type StyledProps = BorderProps &
   SpaceProps &
   FlexboxProps &
   PositionProps &
@@ -99,6 +100,12 @@ const aliasConfig: AliasConfig<AliasProps> = {
   },
   opacity: true
 };
+
+// Extract native props that conflict with types in our custom style props
+type ViewProps = ExtractCollisions<StyledProps, RNViewProps>;
+type AnimatedViewProps = ExtractCollisions<StyledProps, RNAnimatedViewProps>;
+
+export { ViewProps, AnimatedViewProps };
 
 export default [
   css({

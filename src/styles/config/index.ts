@@ -1,3 +1,1 @@
-export { default as imageConfig, ImageProps } from "./imageConfig";
-export { default as textConfig, TextProps } from "./textConfig";
-export { default as viewConfig, ViewProps } from "./viewConfig";
+export { default as iconConfig, IconProps } from "./iconConfig";

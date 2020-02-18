@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ImageProps } from "styles/config";
+import { ImageProps } from "styles/config/imageConfig";
 
 import { Image } from "./Image";
 import { View } from "./View";

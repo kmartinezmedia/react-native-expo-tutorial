@@ -5,9 +5,20 @@ import {
 import styled from "styled-components/native";
 
 import { withAnimated } from "hocs";
-import { viewConfig, ViewProps } from "styles/config";
+import viewConfig, {
+  ViewProps,
+  AnimatedViewProps
+} from "styles/config/viewConfig";
+import { ExtractCollisions } from "styles/types";
 
-type TouchableHighlightProps = RNTouchableHighlightProps & ViewProps;
+type TouchableHighlightProps = ExtractCollisions<
+  ViewProps,
+  RNTouchableHighlightProps
+>;
+type AnimatedTouchableHighlightProps = ExtractCollisions<
+  AnimatedViewProps,
+  TouchableHighlightProps
+>;
 
 const TouchableHighlight = styled(RNTouchableHighlight)<
   TouchableHighlightProps
@@ -15,7 +26,7 @@ const TouchableHighlight = styled(RNTouchableHighlight)<
 
 const AnimatedTouchableHighlight = withAnimated<
   typeof RNTouchableHighlight,
-  TouchableHighlightProps
+  AnimatedTouchableHighlightProps
 >(RNTouchableHighlight, viewConfig);
 
 export { TouchableHighlight, AnimatedTouchableHighlight };

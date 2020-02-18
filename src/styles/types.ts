@@ -1,4 +1,5 @@
-import { StyleProp } from "react-native";
+import { ComponentPropsWithRef } from "react";
+import { Animated, StyleProp } from "react-native";
 import { DefaultTheme } from "styled-components/native";
 import {
   SpaceProps as SSpaceProps,
@@ -6,14 +7,31 @@ import {
   FlexboxProps as SFlexboxProps,
   PositionProps as SPositionProps,
   LayoutProps as SLayoutProps,
+  TypographyProps as STypographyProps,
+  ColorProps as SColorProps,
   ThemeValue as SThemeValue,
   ConfigStyle
 } from "styled-system";
 
-export type VariantConfig<T extends string, K> = Record<
-  "variants",
-  Record<T, K>
+export type RNAnimatedViewProps = ComponentPropsWithRef<typeof Animated.View>;
+export type RNAnimatedImageProps = ComponentPropsWithRef<typeof Animated.Image>;
+export type RNAnimatedTextProps = ComponentPropsWithRef<typeof Animated.Text>;
+export type RNAnimatedScrollViewProps = ComponentPropsWithRef<
+  typeof Animated.ScrollView
 >;
+export type RNAnimatedFlatListProps = ComponentPropsWithRef<
+  typeof Animated.FlatList
+>;
+export type RNAnimatedSectionListProps = ComponentPropsWithRef<
+  typeof Animated.SectionList
+>;
+
+// Extract native props that conflict with types in our custom style props
+export type ExtractCollisions<T, K> = Omit<T, keyof K>;
+export type VariantConfig<
+  T extends string,
+  K extends Record<string, any>
+> = Record<"variants", Record<T, Record<keyof K, K[keyof K]>>>;
 export type AliasConfig<T> = Record<keyof T, ConfigStyle | boolean>;
 export type ModifierConfig<T extends string, K> = Record<T, StyleProp<K>>;
 export type ModifierProps<T extends string> = Partial<Record<T, boolean>>;
@@ -23,12 +41,14 @@ export type SpaceProps = SSpaceProps<DefaultTheme>;
 export type FlexboxProps = SFlexboxProps<DefaultTheme>;
 export type PositionProps = SPositionProps<DefaultTheme>;
 export type LayoutProps = SLayoutProps<DefaultTheme>;
-
+export type TypographyProps = STypographyProps<DefaultTheme>;
+export type ColorProps = SColorProps<DefaultTheme>;
 export type ThemeValue<T extends keyof DefaultTheme> = SThemeValue<
   T,
   DefaultTheme
 >;
-export type ThemeBorderRadius = ThemeValue<"radii">;
+
+export type ThemeBorderRadius = ThemeValue<"radii"> | number;
 export type ThemeFontSize = ThemeValue<"fontSizes">;
 export type ThemeFont = ThemeValue<"fonts">;
 export type ThemeFontWeight = ThemeValue<"fontWeights">;
@@ -72,3 +92,231 @@ export type ThemeColor =
   | "success"
   | "error"
   | "placeholder";
+
+export type IconName =
+  | "package"
+  | "parameters"
+  | "phone-call"
+  | "phone-forwarded"
+  | "phone-incoming"
+  | "phone-missed"
+  | "phone-off"
+  | "phone-outgoing"
+  | "phone-voicemail"
+  | "phone"
+  | "placeholder"
+  | "power"
+  | "radio"
+  | "refresh-1"
+  | "refresh-2"
+  | "rotate-left"
+  | "rotate-right"
+  | "save"
+  | "scissors"
+  | "search"
+  | "settings"
+  | "share-1"
+  | "share-2"
+  | "shield"
+  | "shopping-cart"
+  | "star"
+  | "tags"
+  | "text-align-center"
+  | "text-align-justify"
+  | "text-align-left"
+  | "text-align-right"
+  | "text-bolt"
+  | "text-italic"
+  | "text-type"
+  | "text-underline"
+  | "thumbs-down"
+  | "thumbs-up"
+  | "timer"
+  | "toggle-left"
+  | "toggle-right"
+  | "trash-1"
+  | "trash-2"
+  | "trending-down"
+  | "trending-up"
+  | "umbrella"
+  | "unlocked"
+  | "upload"
+  | "user-check"
+  | "user-group"
+  | "user-minus"
+  | "user-plus"
+  | "user-x"
+  | "user"
+  | "video-off"
+  | "video"
+  | "volume-full"
+  | "volume-half"
+  | "volume-off"
+  | "volume"
+  | "watch"
+  | "weather-cloud-drizzle"
+  | "weather-cloud-lightning"
+  | "weather-cloud-rain"
+  | "weather-cloud-snow"
+  | "weather-moon"
+  | "weather-sun"
+  | "weather-sunrise"
+  | "weather-sunset"
+  | "weather-temperature"
+  | "weather-wind"
+  | "wifi-off"
+  | "wifi"
+  | "zoom-in"
+  | "zoom-out"
+  | "alarm"
+  | "alert-circle"
+  | "alert-octagon"
+  | "alert-triangle"
+  | "anchor"
+  | "arrow-corner-down-left"
+  | "arrow-corner-down-right"
+  | "arrow-corner-left-down"
+  | "arrow-corner-left-up"
+  | "arrow-corner-right-down"
+  | "arrow-corner-right-up"
+  | "arrow-corner-up-left"
+  | "arrow-corner-up-right"
+  | "arrow-down-left"
+  | "arrow-down-right"
+  | "arrow-down"
+  | "arrow-left"
+  | "arrow-right"
+  | "arrow-up-left"
+  | "arrow-up-right"
+  | "arrow-up"
+  | "attachment"
+  | "award"
+  | "backspace"
+  | "bar-1"
+  | "bar-2"
+  | "bar-pie"
+  | "bluetooth"
+  | "book"
+  | "bookmark"
+  | "box"
+  | "briefcase"
+  | "calendar-today"
+  | "calendar"
+  | "camera-aperture"
+  | "camera-film"
+  | "camera-flash"
+  | "camera-off"
+  | "camera"
+  | "cancel-circle"
+  | "cancel-square"
+  | "cancel"
+  | "checkmark"
+  | "chevron-double-down"
+  | "chevron-double-left"
+  | "chevron-double-right"
+  | "chevron-double-up"
+  | "chevron-down"
+  | "chevron-left"
+  | "chevron-right"
+  | "chevron-up"
+  | "clipboard"
+  | "clock"
+  | "cloud-download"
+  | "cloud-off"
+  | "cloud-server"
+  | "cloud-upload"
+  | "cloud"
+  | "computer-cpu"
+  | "computer-disc"
+  | "computer-printer"
+  | "copy"
+  | "credit-cart"
+  | "crop"
+  | "device-desktop"
+  | "device-smartphone"
+  | "device-tablet"
+  | "device-tv"
+  | "download"
+  | "edit-box"
+  | "edit-edit"
+  | "edit-line"
+  | "external-link"
+  | "eye-hide"
+  | "eye-reveal"
+  | "feather"
+  | "file-minus"
+  | "file-plus"
+  | "file-text"
+  | "file"
+  | "filter"
+  | "food-coffee"
+  | "food-restaurant"
+  | "globe"
+  | "hash"
+  | "health-activity"
+  | "health-bodyweight"
+  | "health-cycle"
+  | "health-heart"
+  | "health-walking"
+  | "health-water"
+  | "help"
+  | "home"
+  | "image"
+  | "layout-bars"
+  | "layout-grid"
+  | "layout-kanban"
+  | "layout-layers"
+  | "layout-list"
+  | "layout-sidebar"
+  | "layout"
+  | "life-buoy"
+  | "link-1"
+  | "link-2"
+  | "locked"
+  | "login"
+  | "logout"
+  | "mail-at-sign"
+  | "mail-envelope"
+  | "mail-inbox"
+  | "maps-compass"
+  | "maps-locate"
+  | "maps-map-pin"
+  | "maps-map"
+  | "math-equal"
+  | "math-minus-circle"
+  | "math-minus-square"
+  | "math-minus"
+  | "math-percent"
+  | "math-plus-circle"
+  | "math-plus-square"
+  | "math-plus"
+  | "maximize-1"
+  | "maximize-2"
+  | "menu-burger"
+  | "menu-more-horizontal"
+  | "menu-more-vertical"
+  | "message-circle"
+  | "message-square"
+  | "mic-off"
+  | "mic"
+  | "minimize-1"
+  | "minimize-2"
+  | "move"
+  | "music-fast-forward"
+  | "music-headphones"
+  | "music-note"
+  | "music-pause-circle"
+  | "music-pause"
+  | "music-repeat"
+  | "music-rewind"
+  | "music-shuffle"
+  | "music-skip-back"
+  | "music-skip-forward"
+  | "music-speaker"
+  | "music-stop-circle"
+  | "music-stop"
+  | "navigate-1"
+  | "navigate-2"
+  | "new-chat"
+  | "notifications-off"
+  | "notifications";

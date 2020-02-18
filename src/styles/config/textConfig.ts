@@ -1,10 +1,20 @@
 import { TextProps as RNTextProps } from "react-native";
-import { compose, space, system, variant } from "styled-system";
+import {
+  compose,
+  space,
+  typography,
+  layout,
+  color,
+  variant
+} from "styled-system";
 
 import {
-  AliasConfig,
+  ExtractCollisions,
+  RNAnimatedTextProps,
   SpaceProps,
-  ThemeColor,
+  LayoutProps,
+  TypographyProps,
+  ColorProps,
   ThemeFont,
   ThemeFontSize,
   ThemeFontWeight,
@@ -13,22 +23,25 @@ import {
   VariantConfig
 } from "../types";
 
-interface AliasProps {
-  color?: ThemeColor;
-  fontFamily?: ThemeFont;
-  fontSize?: ThemeFontSize;
-  fontWeight?: ThemeFontWeight;
-  lineHeight?: ThemeLineHeight;
-  letterSpacing?: ThemeLetterSpacing;
-}
-
 type VariantKeys = ThemeFontSize;
 
-interface TextProps extends AliasProps, SpaceProps, RNTextProps {
-  variant?: VariantKeys;
-}
+type StyledProps = TypographyProps &
+  SpaceProps &
+  LayoutProps &
+  ColorProps & {
+    variant?: VariantKeys;
+  };
 
-const variantsConfig: VariantConfig<VariantKeys, AliasProps> = {
+const variantsConfig: VariantConfig<
+  VariantKeys,
+  {
+    fontFamily: ThemeFont;
+    fontSize: ThemeFontSize;
+    fontWeight: ThemeFontWeight;
+    lineHeight: ThemeLineHeight;
+    letterSpacing: ThemeLetterSpacing;
+  }
+> = {
   variants: {
     headline1: {
       fontSize: "headline1",
@@ -75,32 +88,12 @@ const variantsConfig: VariantConfig<VariantKeys, AliasProps> = {
   }
 };
 
-const aliasConfig: AliasConfig<AliasProps> = {
-  color: {
-    property: "color",
-    scale: "colors"
-  },
-  fontFamily: {
-    property: "fontFamily",
-    scale: "fonts"
-  },
-  fontSize: {
-    property: "fontSize",
-    scale: "fontSizes"
-  },
-  fontWeight: {
-    property: "fontWeight",
-    scale: "fontWeights"
-  },
-  lineHeight: {
-    property: "lineHeight",
-    scale: "lineHeights"
-  },
-  letterSpacing: {
-    property: "letterSpacing",
-    scale: "letterSpacings"
-  }
-};
+// Extract native props that conflict with types in our custom style props
+type TextProps = ExtractCollisions<StyledProps, RNTextProps>;
+type AnimatedTextProps = ExtractCollisions<StyledProps, RNAnimatedTextProps>;
 
-export { TextProps };
-export default [variant(variantsConfig), compose(space, system(aliasConfig))];
+export { TextProps, AnimatedTextProps };
+export default [
+  variant(variantsConfig),
+  compose(space, typography, layout, color)
+];

@@ -1,10 +1,12 @@
-import { View as RNView } from "react-native";
+import { View as RNView, Animated } from "react-native";
 import styled from "styled-components/native";
 
-import { withAnimated } from "hocs";
-import { viewConfig, ViewProps } from "styles/config";
+import viewConfig, {
+  ViewProps,
+  AnimatedViewProps
+} from "styles/config/viewConfig";
 
 const View = styled(RNView)<ViewProps>(() => viewConfig);
-const AnimatedView: typeof View = withAnimated<ViewProps>(RNView, viewConfig);
+const AnimatedView = styled(Animated.View)<AnimatedViewProps>(() => viewConfig);
 
 export { View, AnimatedView };
