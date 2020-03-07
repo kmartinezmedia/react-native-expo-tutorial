@@ -1,6 +1,6 @@
 import { Dimensions } from "react-native";
 
-import { theme } from "styles";
+import { theme } from "~/styles";
 
 export const WINDOW_WIDTH = Dimensions.get("window").width;
 export const DEFAULT_PADDING = theme.space[3];

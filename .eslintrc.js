@@ -4,18 +4,11 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json'
   },
-  settings: {
-    'import/resolver': {
-      'babel-module': {},
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.d.ts', '.tsx'],
-      },
-    },
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts'],
-    },
-    react: {
-      version: 'detect',
-    }
+  rules: {
+    'no-console': ["error", { "allow": ['tron'] }],
   },
+  "env": {
+    "browser": true,
+    "node": true
+  }
 }

@@ -4,12 +4,12 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 
-import { withAnimated } from "hocs";
+import { withAnimated } from "~/hocs";
 import viewConfig, {
   ViewProps,
   AnimatedViewProps
-} from "styles/config/viewConfig";
-import { ExtractCollisions } from "styles/types";
+} from "~/styles/config/viewConfig";
+import { ExtractCollisions } from "~/styles/types";
 
 type TouchableHighlightProps = ExtractCollisions<
   ViewProps,

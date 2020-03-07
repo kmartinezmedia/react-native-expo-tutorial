@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Platform } from "react-native";
 
-import { CacheManager } from "utils";
+import { CacheManager } from "~/utils";
 
 const useCachedUri = (uri: string | undefined): string | undefined => {
   const [cachedUri, setCachedUri] = useState<string | undefined>(uri);

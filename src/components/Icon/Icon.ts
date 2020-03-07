@@ -1,11 +1,11 @@
 import { createIconSetFromIcoMoon } from "@expo/vector-icons";
 import styled from "styled-components/native";
 
-import { fonts } from "assets";
-import { IconProps, iconConfig } from "styles/config";
-import { withAnimated } from "hocs";
-
 import icoMoonConfig from "./icoMoonConfig.json";
+
+import { withAnimated } from "~/hocs";
+import { fonts } from "~/assets";
+import { IconProps, iconConfig } from "~/styles/config";
 
 const IconSet = createIconSetFromIcoMoon(
   icoMoonConfig,

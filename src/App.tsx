@@ -4,11 +4,16 @@ import { ThemeProvider } from "styled-components/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { images, fonts } from "assets";
-import { AnimatedView, TabBar, Text, View } from "components";
-import { useAssetsLoader } from "hooks";
-import { TabBarProvider } from "providers";
-import { theme } from "styles";
+import { images, fonts } from "~/assets";
+import { AnimatedView, TabBar, Text, View } from "~/components";
+import { useAssetsLoader } from "~/hooks";
+import { TabBarProvider } from "~/providers";
+import { theme } from "~/styles";
+import { LogConfig } from "~/configs";
+
+if (__DEV__) {
+  LogConfig.configure();
+}
 
 const Tabs = createBottomTabNavigator();
 

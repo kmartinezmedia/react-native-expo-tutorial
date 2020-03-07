@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components/native";
 import { LinearGradient as ReactLinearGradient } from "expo-linear-gradient";
 
-import viewConfig, { ViewProps } from "styles/config/viewConfig";
-import { ThemeGradient } from "styles";
-import { withAnimated, withClass } from "hocs";
+import { withAnimated, withClass } from "~/hocs";
+import viewConfig, { ViewProps } from "~/styles/config/viewConfig";
+import { ThemeGradient } from "~/styles";
 
 type RNLinearGradientProps = React.ComponentProps<typeof ReactLinearGradient>;
 interface LinearGradientProps extends RNLinearGradientProps, ViewProps {
@@ -53,9 +53,10 @@ const LinearGradient = (props: LinearGradientProps) => {
   );
 };
 
+const LinearGradientClass = withClass<typeof LinearGradient>(LinearGradient);
 const AnimatedLinearGradient = withAnimated<
-  typeof LinearGradient,
+  typeof LinearGradientClass,
   LinearGradientProps
->(withClass(LinearGradient), []);
+>(LinearGradientClass, []);
 
 export { LinearGradient, AnimatedLinearGradient };

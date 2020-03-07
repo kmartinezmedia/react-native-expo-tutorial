@@ -3,11 +3,11 @@ import { Animated, Dimensions } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useSafeArea } from "react-native-safe-area-context";
 
-import { TabBarContext } from "providers";
-
 import { AnimatedView } from "../View";
 import { DEFAULT_PADDING } from "./constants";
 import Tab from "./Tab";
+
+import { TabBarContext } from "~/providers";
 
 export const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 

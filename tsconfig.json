@@ -1,53 +1,39 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "outDir": "./lib",
     "baseUrl": "./src",
-    "outDir": "dist",
-    "allowJs": false,
-    "checkJs": false,
-    "declaration": true,
-    "rootDirs": [
-      "src",
-      "storybook"
-    ],
     "paths": {
       "~/*": [
         "*"
       ]
     },
     "target": "esnext",
-    "jsx": "react-native",
+    "module": "esnext",
     "lib": [
       "dom",
-      "dom.iterable",
       "esnext"
     ],
+    "jsx": "react-native",
+    "declaration": true,
+    "strict": true,
     "moduleResolution": "node",
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": false,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedParameters": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
+    "types": [
+      "jest"
+    ],
+    "noEmit": true
   },
+  "files": [
+    "lib/global.d.ts"
+  ],
   "include": [
-    "./src/**/*"
+    "src"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.test.ts*"
   ]
 }

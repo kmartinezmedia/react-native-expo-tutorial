@@ -48,7 +48,7 @@ export type ThemeValue<T extends keyof DefaultTheme> = SThemeValue<
   DefaultTheme
 >;
 
-export type ThemeBorderRadius = ThemeValue<"radii"> | number;
+export type ThemeBorderRadius = ThemeValue<"radii">;
 export type ThemeFontSize = ThemeValue<"fontSizes">;
 export type ThemeFont = ThemeValue<"fonts">;
 export type ThemeFontWeight = ThemeValue<"fontWeights">;

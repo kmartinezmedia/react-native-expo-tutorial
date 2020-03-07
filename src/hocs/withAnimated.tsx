@@ -29,14 +29,4 @@ function withAnimated<T extends Component<T>, P extends ComponentProps<T>>(
   >;
 }
 
-function withClass(WrappedComponent) {
-  // eslint-disable-next-line react/display-name, react/prefer-stateless-function
-  return class extends React.Component {
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
-  };
-}
-
-export { withClass };
 export default withAnimated;

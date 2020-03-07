@@ -4,7 +4,7 @@ import { Text as RNText, Animated } from "react-native";
 import textConfig, {
   TextProps,
   AnimatedTextProps
-} from "styles/config/textConfig";
+} from "~/styles/config/textConfig";
 
 const Text = styled(RNText)<TextProps>(() => textConfig);
 const AnimatedText = styled(Animated.Text)<AnimatedTextProps>(() => textConfig);

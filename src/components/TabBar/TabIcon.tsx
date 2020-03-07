@@ -1,12 +1,12 @@
 import React from "react";
 import { Animated } from "react-native";
 
-import { useCachedUri } from "hooks";
-
 import { AnimatedIcon } from "../Icon";
 import Avatar from "../Avatar";
 import { View } from "../View";
 import { ICON_SIZE } from "./constants";
+
+import { useCachedUri } from "~/hooks";
 
 type Props = {
   name: string;

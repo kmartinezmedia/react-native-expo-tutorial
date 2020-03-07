@@ -1,9 +1,9 @@
 import React from "react";
 
-import { ImageProps } from "styles/config/imageConfig";
-
 import { Image } from "./Image";
 import { View } from "./View";
+
+import { ImageProps } from "~/styles/config/imageConfig";
 
 interface AvatarProps extends Omit<ImageProps, "source"> {
   size?: number;
@@ -15,11 +15,7 @@ const Avatar = (props: AvatarProps) => {
   const { size = 48, uri, rounded = false, ...otherProps } = props;
 
   return (
-    <View
-      borderRadius={rounded ? size / 2 : "medium"}
-      overflow="hidden"
-      size={size}
-    >
+    <View overflow="hidden" size={size} style={{ borderRadius: size / 2 }}>
       {uri ? (
         <Image bg="placeholder" size={size} source={{ uri }} {...otherProps} />
       ) : (
